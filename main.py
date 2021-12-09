@@ -12,6 +12,9 @@ while True:
 	laplacian = np.uint8(laplacian)
 	cv.imshow('Laplacian', laplacian)
 
+	edges = cv.Canny(frame, 100, 100)
+	cv.imshow('Canny', edges)
+
 	if cv.waitKey(5) == ord('x'):
 		break 
 
