@@ -2,6 +2,8 @@ import cv2 as cv
 import numpy as np 
 
 camera = cv.VideoCapture(0)
+fourcc = cv.VideoWriter_fourcc(*'XVID')
+out    = cv.VideoWriter('output.avi', fourcc, 20.0, (640,480))
 
 while True:
 	_, frame = camera.read()
@@ -19,4 +21,5 @@ while True:
 		break 
 
 camera.release()
+out.release()
 cv.destroyAllWindows()
